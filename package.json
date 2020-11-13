@@ -1,0 +1,23 @@
+{
+  "name": "node.js-crash-course",
+  "version": "1.0.0",
+  "description": "node crash course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenSJones/Node.js-Crash-Course.git"
+  },
+  "keywords": [
+    "npm",
+    "index.js"
+  ],
+  "author": "Steven Jones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevenSJones/Node.js-Crash-Course/issues"
+  },
+  "homepage": "https://github.com/StevenSJones/Node.js-Crash-Course#readme"
+}
