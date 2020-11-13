@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/StevenSJones/Node.js-Crash-Course/issues"
   },
-  "homepage": "https://github.com/StevenSJones/Node.js-Crash-Course#readme"
+  "homepage": "https://github.com/StevenSJones/Node.js-Crash-Course#readme",
+  "dependencies": {
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
