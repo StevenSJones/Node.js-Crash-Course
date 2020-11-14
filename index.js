@@ -1,8 +1,6 @@
-//This require is written in common js. require imports the file that is named in the ()
-
-//the ./ is because person is a file and not a module that was installed or a core module
 const Person = require('./person');
-
+//Above: This require is written in common js. require imports the file that is named in the ()
+//the ./ is because person is a file and not a module that was installed or a core module
 
 //first: I console.logged; using the dot operator, the person itself, as well as the name and age of the person.
 // console.log(person);
