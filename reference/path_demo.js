@@ -8,10 +8,18 @@ console.log(__filename);
 
 /*---------------------------------------------------------*/
 
-//using path.basename and passing in the filename method provided by the module wrapper function.
+//using path.basename() and passing in the filename method provided by the module wrapper function to return the dir and file names
 console.log(path.basename(__filename));
-//produces the:
+//produces:
 // /Users/stevenjones/Practice-post-BC/Node.js-Crash-Course/reference/path_demo.js
-path_demo.js
+// path_demo.js
 
 /*---------------------------------------------------------*/
+
+//Using path.dirname() and passing in the filename method provided by the module wrapper function to return the dir name
+console.log(path.dirname(__filename));
+//produces:
+// /Users/stevenjones/Practice-post-BC/Node.js-Crash-Course/reference/path_demo.js
+// path_demo.js
+// /Users/stevenjones/Practice-post-BC/Node.js-Crash-Course/reference
+
