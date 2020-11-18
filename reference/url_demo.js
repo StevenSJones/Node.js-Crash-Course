@@ -36,3 +36,7 @@ myURL.searchParams.append('abc', '123');
 console.log(myURL.searchParams);
 //produces an object with the same information provided when we ran URLSearchParams BUT with the new params that we added:
 // URLSearchParams { 'id' => '100', 'status' => 'active', 'abc' => '123' }
+
+//loop through the params
+myURL.searchParams.forEach((value, name) => console.log(`${name}: ${value}`));
+//produces: id: 100 status: active abc: 123
