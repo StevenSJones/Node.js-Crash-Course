@@ -45,4 +45,8 @@ console.log(os.cpus());
 
 //Total memory
 console.log(os.totalmem());
-// produces: 
+// produces: 8589934592
+
+//Home directory
+console.log(os.homedir());
+//produces: /Users/stevenjones as that is my home directory
