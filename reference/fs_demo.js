@@ -28,7 +28,7 @@ const path = require("path");
 /*---------------------------------------------------------*/
 
 //append a file adds to a file
-// fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
+// fs.appendFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
 //     if (err) throw err;
 //     console.log("File written to...");
 //   });
@@ -37,8 +37,19 @@ const path = require("path");
   /*-------------------------------------------------------*/
 
   // Read file
-  fs.readFile(path.join(__dirname, '/test', 'hello.txt'), 'utf8', (err, data ) => {
-    if (err) throw err;
-    console.log(data);
-  });
+  // fs.readFile(path.join(__dirname, '/test', 'hello.txt'), 'utf8', (err, data ) => {
+  //   if (err) throw err;
+  //   console.log(data);
+  // });
   // this produces the text inside of test that reads: hello.txt.
+
+/*-------------------------------------------------------*/
+
+  fs.rename(
+    path.join(__dirname, '/test', 'helloyall.txt'), 
+    path.join(__dirname, '/test', 'helloworld.txt'), 
+    (err) => {
+      if (err) throw err;
+      console.log('File renamed...');
+    });
+    // produces a renamed file that was hello.txt and is now helloworld.txt. Because I told the console.log to say file renamed if successful, that is the message that I received in the log message.
