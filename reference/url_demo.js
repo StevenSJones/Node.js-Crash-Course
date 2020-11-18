@@ -8,3 +8,7 @@ console.log(myURL.href);
 console.log(myURL.toString());
 //produces: http://mywebsite.com/hello.html?id=100&status=active
 //produces: http://mywebsite.com/hello.html?id=100&status=active
+
+// HOST (root domain)
+console.log(myURL.host);
+// produces: mywebsite.com
