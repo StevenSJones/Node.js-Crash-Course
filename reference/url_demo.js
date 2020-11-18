@@ -21,6 +21,13 @@ console.log(myURL.hostname);
 console.log(myURL.pathname);
 //produces just the path: /hello.html
 
+//==========================================================
 //Serialized query
 console.log(myURL.search);
-//produces 
+//produces ?id=100&status=active
+
+//params object
+console.log(myURL.searchParams);
+//produces an object with the same information provided when we ran search: URLSearchParams { 'id' => '100', 'status' => 'active' }
+//==========================================================
+
