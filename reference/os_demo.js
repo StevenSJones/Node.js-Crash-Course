@@ -50,3 +50,7 @@ console.log(os.totalmem());
 //Home directory
 console.log(os.homedir());
 //produces: /Users/stevenjones as that is my home directory
+
+// Uptime
+console.log(os.uptime());
+//produces the total amount of time my system has been up in seconds. My time was 8798
