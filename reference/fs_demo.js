@@ -1,4 +1,5 @@
 const fs = require("fs");
+// above I imported the File System module. It is a core module so no need to include ./ (filepath) or run npm install path
 const path = require("path");
 
 //create folder, BUT THERE IS A SYCRONOUS VERSION. This version, the asyncronous verion, takes a callback.
@@ -52,4 +53,5 @@ const path = require("path");
       if (err) throw err;
       console.log('File renamed...');
     });
+
     // produces a renamed file that was hello.txt and is now helloworld.txt. Because I told the console.log to say file renamed if successful, that is the message that I received in the log message.
