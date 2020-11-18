@@ -48,6 +48,12 @@ console.log(path.parse(__filename));
 
 console.log(path.parse(__filename).base);
 //produces: just the base of the filename
-path_demo.js
+// path_demo.js
 /*---------------------------------------------------------*/
+//concatenate paths
+//this works really well when you have issues with delimiters
+//..test/hello.html
+console.log(path.join(__dirname, 'test', 'hello.html'))
+//produces:
+// /Users/stevenjones/Practice-post-BC/Node.js-Crash-Course/reference/test/hello.html
 
