@@ -7,6 +7,7 @@ const path = require("path");
 //     if(err) throw err;
 //     console.log('Folder created...');
 // });
+
 //below is the mkdir function with an arrow function. With the arrow function, if there is only one parameter then we do not need the parentheses around err. If there were multiple parameters then we would.
 // fs.mkdir(path.join(__dirname, "/test"), {}, err => {
 //   if (err) throw err;
@@ -14,9 +15,30 @@ const path = require("path");
 // });
 //this produces a new folder (dir) called test.
 
+/*---------------------------------------------------------*/
+
+//to create a file there is a method called open(). BUT to 
 //create and write to a file
 // fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
 //     if (err) throw err;
 //     console.log("File written to...");
 //   });
   //this produces a new file inside of test called hello.txt AND added the text 'Hello World' to it simultaneously.
+
+/*---------------------------------------------------------*/
+
+//append a file adds to a file
+// fs.writeFile(path.join(__dirname, '/test', 'hello.txt'), 'Hello World!', err => {
+//     if (err) throw err;
+//     console.log("File written to...");
+//   });
+  //this produces a new file inside of test called hello.txt AND added the text 'Hello World' to it simultaneously.
+
+  /*-------------------------------------------------------*/
+
+  // Read file
+  fs.readFile(path.join(__dirname, '/test', 'hello.txt'), 'utf8', (err, data ) => {
+    if (err) throw err;
+    console.log(data);
+  });
+  // this produces the text inside of test that reads: hello.txt.
