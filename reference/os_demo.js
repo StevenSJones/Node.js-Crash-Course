@@ -8,4 +8,9 @@ console.log(os.platform());
 // CPU Arch
 console.log(os.arch());
 // os.arch() method is an inbuilt application programming interface of the os module which is used to get CPU architecture of the computer for which the current node.js is compiled
-// produces 
+// produces x64. Meaning 64-bit
+
+// CPU Core info
+console.log(os.cpus());
+// produces an object with information for every core of the cpu.
+// I have 4 cores on this macbook pro according to the return in the terminal that I received.
