@@ -6,3 +6,5 @@ const myURL = new URL ('http://mywebsite.com/hello.html?id=100&status=active');
 console.log(myURL.href);
 //using the toString method produces the same return
 console.log(myURL.toString());
+//produces: http://mywebsite.com/hello.html?id=100&status=active
+//produces: http://mywebsite.com/hello.html?id=100&status=active
