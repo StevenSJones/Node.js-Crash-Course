@@ -41,5 +41,8 @@ console.log(os.cpus());
 
 //Free memory
  console.log(os.freemem());
+ // produces: 190124032
 
-
+//Total memory
+console.log(os.totalmem());
+// produces: 
