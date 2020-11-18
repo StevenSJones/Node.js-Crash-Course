@@ -20,3 +20,7 @@ console.log(myURL.hostname);
 //pathname
 console.log(myURL.pathname);
 //produces just the path: /hello.html
+
+//Serialized query
+console.log(myURL.search);
+//produces 
