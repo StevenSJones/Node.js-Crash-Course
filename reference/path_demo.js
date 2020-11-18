@@ -45,5 +45,9 @@ console.log(path.parse(__filename));
 //     ext: '.js',
 //     name: 'path_demo'
 //   }
+
+console.log(path.parse(__filename).base);
+//produces: just the base of the filename
+path_demo.js
 /*---------------------------------------------------------*/
 
