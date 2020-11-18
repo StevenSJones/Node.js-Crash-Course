@@ -16,3 +16,7 @@ console.log(myURL.host);
 //Hostname
 console.log(myURL.hostname);
 // produces: mywebsite.com WITHOUT the port
+
+//pathname
+console.log(myURL.pathname);
+//produces just the path: /hello.html
