@@ -1,6 +1,6 @@
 const url = require('url');
 // I imported the url module and then below I instantiated a new URL object. This must be done for the import to work. 
-const myURL = new URL ('http://mywebsite.com/hello.html?id=100&status=active');
+const myURL = new URL ('http://mywebsite.com:8000/hello.html?id=100&status=active');
 
 // Serialized URL using the href property NOT A METHOD
 console.log(myURL.href);
@@ -11,4 +11,8 @@ console.log(myURL.toString());
 
 // HOST (root domain)
 console.log(myURL.host);
-// produces: mywebsite.com
+// produces: mywebsite.com:8000 (8000 is the port)
+
+//Hostname
+console.log(myURL.hostname);
+// produces: mywebsite.com WITHOUT the port
