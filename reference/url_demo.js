@@ -31,3 +31,8 @@ console.log(myURL.searchParams);
 //produces an object with the same information provided when we ran search: URLSearchParams { 'id' => '100', 'status' => 'active' }
 //==========================================================
 
+//add params
+myURL.searchParams.append('abc', '123');
+console.log(myURL.searchParams);
+//produces an object with the same information provided when we ran URLSearchParams BUT with the new params that we added:
+// URLSearchParams { 'id' => '100', 'status' => 'active', 'abc' => '123' }
