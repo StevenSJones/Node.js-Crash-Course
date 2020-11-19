@@ -1,6 +1,23 @@
+const http = require('http');
+const path = require('path');
+const fs = require('fs');
+//1 import core modules just above to create a server
+
+//2 create the server and pass in the req and res
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.end('<h1>home</h1>');
+    }
+});
+
+//4 create the PORT setting it to what ever port is available on our client's server OR port 5000
+const PORT = process.env.PORT || 5400;
+
+//3 set the port to listen and tell us with a log to the console when it is running.
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
-const Logger = require('./logger');
+// const Logger = require('./logger');
 //import the Logger class from the logger file that exports it
 
 //logger is a class so we need to instantiate it with a new object called logger. It is a new object FROM the Logger class constructor
