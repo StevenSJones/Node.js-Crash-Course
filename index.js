@@ -1,14 +1,31 @@
-const http = require('http');
-const path = require('path');
-const fs = require('fs');
+const http = require("http");
+const path = require("path");
+const fs = require("fs");
 //1 import core modules just above to create a server
 
 //2 create the server and pass in the req and res
 const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.writeHead(200, { 'Content-Type': 'text/html'});//write the headers
-        res.end('<h1>Here is the homepage</h1>');
-    }
+  if (req.url === "/") {//check for the home route to index.html
+    fs.readFile(
+      path.join(__dirname, "public", "index.html"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "text/html" }); //write the headers
+        res.end(content);
+      }
+    );
+  }
+
+  if (req.url === "/about") {//check for about route to about.html
+    fs.readFile(
+      path.join(__dirname, "public", "about.html"),
+      (err, content) => {
+        if (err) throw err;
+        res.writeHead(200, { "Content-Type": "text/html" }); //write the headers
+        res.end(content);
+      }
+    );
+  }
 });
 
 //4 create the PORT setting it to what ever port is available on our client's server OR port 5000
@@ -16,7 +33,6 @@ const PORT = process.env.PORT || 5400;
 
 //3 set the port to listen and tell us with a log to the console when it is running.
 server.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
-
 
 // const Logger = require('./logger');
 //import the Logger class from the logger file that exports it
@@ -51,5 +67,3 @@ server.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
 //Second: I created a class constructor to create an object literal that contains a function and then after exporting said class and importing it to a new file, I then created an instance of the class. Then, with the dot operator, I ran the function created in conjunction with the instantiated class to produce an object that runs a the funciton, thus having a person say a greeting.'
 // const person1 = new Person('John Doe', 30);
 // person1.greeting();
-
-
