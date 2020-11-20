@@ -6,7 +6,8 @@ const fs = require('fs');
 //2 create the server and pass in the req and res
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
-        res.end('<h1>home</h1>');
+        res.writeHead(200, { 'Content-Type': 'text/html'});//write the headers
+        res.end('<h1>Here is the homepage</h1>');
     }
 });
 
@@ -14,7 +15,7 @@ const server = http.createServer((req, res) => {
 const PORT = process.env.PORT || 5400;
 
 //3 set the port to listen and tell us with a log to the console when it is running.
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
 
 
 // const Logger = require('./logger');
