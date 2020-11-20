@@ -16,15 +16,13 @@ const server = http.createServer((req, res) => {
     );
   }
 
-  if (req.url === "/about") {//check for about route to about.html
-    fs.readFile(
-      path.join(__dirname, "public", "about.html"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "text/html" }); //write the headers
-        res.end(content);
-      }
-    );
+  if (req.url === "/api/users") {//check for about route to about.html
+    const users = [
+        { name: 'Steven Jones', age: 34 },
+        { name: 'Phillip Moreau', age: 44 }
+    ];
+    res.writeHead(200, { "Content-Type": "application/json" }); //write the headers
+    res.end(JSON.stringify(users));
   }
 });
 
