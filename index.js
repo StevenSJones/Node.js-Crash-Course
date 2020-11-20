@@ -5,24 +5,56 @@ const fs = require("fs");
 
 //2 create the server and pass in the req and res
 const server = http.createServer((req, res) => {
-  if (req.url === "/") {//check for the home route to index.html
-    fs.readFile(
-      path.join(__dirname, "public", "index.html"),
-      (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { "Content-Type": "text/html" }); //write the headers
-        res.end(content);
-      }
-    );
-  }
+  //   if (req.url === "/") {//check for the home route to index.html
+  //     fs.readFile(
+  //       path.join(__dirname, "public", "index.html"),
+  //       (err, content) => {
+  //         if (err) throw err;
+  //         res.writeHead(200, { "Content-Type": "text/html" }); //write the headers
+  //         res.end(content);
+  //       }
+  //     );
+  //   }
 
-  if (req.url === "/api/users") {//check for about route to about.html
-    const users = [
-        { name: 'Steven Jones', age: 34 },
-        { name: 'Phillip Moreau', age: 44 }
-    ];
-    res.writeHead(200, { "Content-Type": "application/json" }); //write the headers
-    res.end(JSON.stringify(users));
+  //   if (req.url === "/api/users") {//check for about route to about.html
+  //     const users = [
+  //         { name: 'Steven Jones', age: 34 },
+  //         { name: 'Phillip Moreau', age: 44 }
+  //     ];
+  //     res.writeHead(200, { "Content-Type": "application/json" }); //write the headers
+  //     res.end(JSON.stringify(users));
+  //   }
+
+  //Build file path
+  let filePath = path.join(
+    __dirname,
+    "public",
+    req.url === "/" ? "index.html" : req.url
+  );
+
+  //extension of the file being sent
+  let extname = path.extname(filePath);
+
+  //initial content type
+  let contentType = "text/html";
+
+  //check ext and set content type
+  switch (extname) {
+    case ".js":
+      contentType = "text/javascript";
+      break;
+    case ".css":
+      contentType = "text/css";
+      break;
+    case ".json":
+      contentType = "application/json";
+      break;
+    case ".png":
+      contentType = "image/png";
+      break;
+    case ".jpg":
+      contentType = "image/jpg";
+      break;
   }
 });
 
