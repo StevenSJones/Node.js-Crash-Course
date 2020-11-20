@@ -25,20 +25,20 @@ const server = http.createServer((req, res) => {
   //     res.end(JSON.stringify(users));
   //   }
 
-  //Build file path
+  //Build file path by looking in the public folder
   let filePath = path.join(
     __dirname,
     "public",
     req.url === "/" ? "index.html" : req.url
   );
 
-  //extension of the file being sent
+  // get the extension of the file being sent
   let extname = path.extname(filePath);
 
   //initial content type
   let contentType = "text/html";
 
-  //check ext and set content type
+  //check ext and set content type based on the ext
   switch (extname) {
     case ".js":
       contentType = "text/javascript";
@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
       }
     } else {
       // Success
-      res.writeHead(200, { "Content-Type": "text/html" });
+      res.writeHead(200, { "Content-Type": contentType });
       res.end(content, "utf8");
     }
   });
